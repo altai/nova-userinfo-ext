@@ -108,7 +108,7 @@ class UserInfoKeypairsController(object):
             raise webob.exc.HTTPBadRequest(explanation=msg)
 
         keypair = {
-            'user_id': context.user_id,
+            'user_id': user_id,
             'name': name,
             'public_key': public_key,
             'fingerprint': fingerprint
