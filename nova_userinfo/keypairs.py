@@ -49,7 +49,6 @@ class UserInfoKeypairsController(object):
     def index(self, req, user_id):
         """List of keypairs for given user"""
         context = req.environ['nova.context']
-        # TODO(imelnikov): authorize context
 
         key_pairs = db.key_pair_get_all_by_user(context, user_id)
         rval = []
@@ -66,7 +65,6 @@ class UserInfoKeypairsController(object):
     @wsgi.serializers(xml=KeypairTemplate)
     def show(self, req, user_id, id):
         context = req.environ['nova.context']
-        # TODO(imelnikov): authorize context
 
         try:
             key_pair = db.key_pair_get(context, user_id, id)
@@ -84,7 +82,6 @@ class UserInfoKeypairsController(object):
     def create(self, req, user_id, body=None):
         """Import key pair"""
         context = req.environ['nova.context']
-        # TODO(imelnikov): authorize context
 
         try:
             params = body['keypair']
@@ -119,7 +116,6 @@ class UserInfoKeypairsController(object):
     def delete(self, req, user_id, id):
         """Delete a keypair with a given name"""
         context = req.environ['nova.context']
-        # TODO(imelnikov): authorize context
 
         try:
             db.key_pair_destroy(context, user_id, id)
