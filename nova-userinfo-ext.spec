@@ -1,5 +1,3 @@
-%global with_doc 0
-
 Name:             nova-userinfo-ext
 Version:          1.0
 Release:          0
